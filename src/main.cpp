@@ -3,7 +3,7 @@
 
 char signo = 0;
 char operación = 0;
-int valor_displat = 0;
+int valor_display = 0;
 int valor_numero = 0;
 int valor_previo = 0;
 char cantidad_cifras = 0;
@@ -65,4 +65,45 @@ char cifra 3 = 0;
   PORTC &= (decenas | 0xF0);
 
   _delay_ms(5);
+ }
+ void cifras (int number){
+  switch (cantidad_cifras){
+    case 1:
+    cifra_1 = number;
+    valor_numero = cifras_1;
+    break;
+    case 2:
+    cifra_2 = number;
+    valor_numero = (cifra_1 * 10) + cifra_2;
+    break;
+
+    case 3:
+
+    cifra_3 = number;
+    valor_numero = (cifra * 100) + (cifra_2 * 10) + cifra 3;
+
+  }
+ }
+
+ void accion_matriz (char valor){
+  switch (valor){
+    case 1: 
+    valor_display = 1;
+    cantidad_cifras++;
+    cifras (valor_display);
+    break;
+
+    case 2:
+    valor_display = 2;
+    cantidad_cifras++;
+    cifras (valor_display);
+    break;
+
+    case 3: valor_ display = 3;
+    cantidad_cifras++;
+    cifras(valor_display);
+    break;
+    
+
+  }
  }
