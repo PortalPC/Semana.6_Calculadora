@@ -1,5 +1,5 @@
-#include <avr/.io.h>
-#include <util/delat.h>
+#include <avr/io.h>
+#include <util/delay.h>
 
 char signo = 0;
 char operación = 0;
@@ -165,7 +165,7 @@ char cifra 3 = 0;
     break;
 
     case 13:
-    sigmo++
+    signo++
     if (signo > 1){
       signo = ;
     }
@@ -256,7 +256,7 @@ char cifra 3 = 0;
       }
       valor_previo = 0;
       cantidad = 0;
-      cifras_1 = cifras_2 = cirfas_3 = 0;
+      cifras_1; cifras_;= cirfas_3 = 0;
       signo = 0;
       operación = 0;
       resultado = 0;
