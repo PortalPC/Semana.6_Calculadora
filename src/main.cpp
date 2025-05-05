@@ -103,7 +103,155 @@ char cifra 3 = 0;
     cantidad_cifras++;
     cifras(valor_display);
     break;
-    
+
+    case 4:
+    operación = 1;
+    valor_previo = valor_numero;
+    valor_numero = 0;
+    cantidad_cifras = 0;
+    cifras_1 = cifra_2 = cifra_3 = 0;
+    break;
+
+    case 5;
+    valor_display = 4;
+    cantidad_cifras++;
+    cifras (valor_display);
+    break;
+
+    case 6: 
+    valor_display = 5;
+    cantidad_cifras++;
+    cifras (valor_display);
+    break;
+
+    case 7:
+    valor_display = 6;
+    cantidad_cifras++;
+    cifras (valor_display);
+    break;
+
+    case 8:
+    operación = 2;
+    valor_previo = valor_numero;
+    valor_numero = 0;
+    cantidad_cifras = 0;
+    cifras_1 = cifra_2 = cifra_3 = 0;
+    break;
+
+    case 9:
+    valor_display = 7;
+    cantidad_cifras++;
+    cifras (valor_display);
+    break;
+
+    case 10:
+    valor_diplay = 8;
+    cantidad_cifras++;
+    cifras (valor_display);
+    break;
+
+    case 11:
+    valor_display = 9;
+    cantidad_cifras++;
+    cifras (valor_display);
+    break;
+
+    case 12:
+    operación = 3;
+    valor_previo = valor_numero;
+    valor_numero = 0;
+    cantidad_cifras = 0;
+    cifras_1 = cifra_2 = cifra_3 = 0;
+    break;
+
+    case 13:
+    sigmo++
+    if (signo > 1){
+      signo = ;
+    }
+    valor_numero *= -1;
+    break;
+
+    case 14:
+    valor_display = 0;
+    cantidad_cifras++;
+    cifras (valor_display);
+    break;
+
+    case 15:
+    enter = 1;
+    break;
+
+    case 16:
+    operación = 4;
+    valor_previo = valor_numero;
+    valor_numero = 0;
+    cantidad_cifras = 0;
+    cifras_1 = cifra_2 = cifra_3 = 0;
+    break;
 
   }
+ }
+
+ int main (void){
+  DDRD &= ~(0xF0);
+  DDRD |= 0x0E;
+  DDRB |= 0x0F;
+  DDRC |= 0x1F;
+  PORTD |= 0xF0;
+
+  int resultado = 0;
+
+  while (1){
+
+    display_triple (valor_numero);
+    inter key = scanear_matriz();
+    if (key != 0xFF){
+      acción_matriz (key);
+    }
+    if (cantidad_cifras > 3){
+      cantidad_cifras = 3;
+    }
+
+    if (enter == 1){
+      switch (operación){
+        case 1:
+        resultado = valor_previo + valor_numero;
+        if (resultado > 999 || resultado < -999){
+          resultado = 0;
+        }
+        valor_numero =resultado;
+        break;
+
+        case 2:
+        resultado = valor_previo - valor_numero;
+        if (resultado > 999 || resultado < -999){
+          resultado = 0;
+        }
+        valor_numero = resultado;
+        break;
+
+        case 3:
+        resultado = valor_previo * valor_numero;
+        if (resultado > 999 || resultado < -999){
+          resultado = 0;
+
+        }
+        valor_numero = resultado;
+        break;
+
+        case 4:
+        if (valor_numero != 0) {
+          resultado = valor_preevio / valor_numero;
+          if (resultado > 999 || resultado < -999){
+            resultado = 0;
+          }
+          
+        }else{
+          resultado = 0;
+        }
+      }
+    }
+  }
+  
  }
