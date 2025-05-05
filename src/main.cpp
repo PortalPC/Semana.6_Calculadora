@@ -250,7 +250,18 @@ char cifra 3 = 0;
         }else{
           resultado = 0;
         }
+        valor_numero = resultado;
+        break;
+
       }
+      valor_previo = 0;
+      cantidad = 0;
+      cifras_1 = cifras_2 = cirfas_3 = 0;
+      signo = 0;
+      operación = 0;
+      resultado = 0;
+      enter = 0;
+      
     }
   }
   
